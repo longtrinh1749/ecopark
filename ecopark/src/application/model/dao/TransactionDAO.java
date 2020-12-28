@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 
-import application.db.DBConnection;
+import application.utils.db.DBConnection;
 import application.model.entity.CreditCard;
 
 public class TransactionDAO {

@@ -1,4 +1,4 @@
-package application.model.subsystems.interbank;
+package application.subsystems.interbank;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import application.model.entity.CreditCard;
 import application.model.entity.Transaction;
 import application.utils.MD5Hash;
 import application.utils.MyMap;
-import application.model.subsystems.interbank.InterbankInterface;
+import application.subsystems.interbank.InterbankInterface;
 
 /***
  * The {@code InterbankService} class is used to communicate with the

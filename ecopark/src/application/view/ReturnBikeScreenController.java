@@ -1,4 +1,4 @@
-package application.controller;
+package application.view;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +25,7 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import application.controller.ReturnBikeController;
 import application.model.entity.*;
 /**
  * This class control the return bike screen

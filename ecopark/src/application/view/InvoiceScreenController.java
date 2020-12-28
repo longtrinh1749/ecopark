@@ -1,7 +1,8 @@
-package application.controller;
+package application.view;
 
 import java.io.IOException;
 
+import application.controller.InvoiceController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

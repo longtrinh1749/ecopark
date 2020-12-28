@@ -1,4 +1,4 @@
-package application.model.subsystems.interbank;
+package application.subsystems.interbank;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package application.db;
+package application.utils.db;
 
 //this class define static const String for db connection
 public class Config {

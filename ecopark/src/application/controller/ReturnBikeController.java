@@ -2,9 +2,9 @@ package application.controller;
 
 import application.model.services.BikeService;
 import application.model.services.DockService;
-import application.model.subsystems.interbank.InterbankBoundary;
-import application.model.subsystems.interbank.InterbankRequest;
-import application.model.subsystems.interbank.InterbankService;
+import application.subsystems.interbank.InterbankBoundary;
+import application.subsystems.interbank.InterbankRequest;
+import application.subsystems.interbank.InterbankService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +96,7 @@ public class ReturnBikeController{
 	   * This function is used to return the bike with to the Dock with dockId param
 	   * @param dockId
 	   */
-	  void returnBike(int dockId) {
+	  public void returnBike(int dockId) {
 		  invoice = new Invoice(Order.getOrder());
 		  returnDeposit();
 		  payRent();

@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import application.db.DBConnection;
+import application.utils.db.DBConnection;
 
 public class DockDAO {
 	public static final String QUERY_SELECT_ALL = "Select * from dock ";

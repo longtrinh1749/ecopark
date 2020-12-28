@@ -1,7 +1,8 @@
-package application.controller;
+package application.view;
 
 import java.io.IOException;
 
+import application.controller.RentBikeController;
 import application.model.entity.Bike;
 import application.model.services.BikeService;
 import javafx.fxml.FXML;

@@ -1,9 +1,10 @@
-package application.controller;
+package application.view;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import application.controller.DockDetailedController;
 import application.model.entity.Bike;
 import application.model.entity.Dock;
 import application.model.services.BikeService;

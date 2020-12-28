@@ -1,4 +1,4 @@
-package application.controller;
+package application.view;
 
 import java.io.IOException;
 import java.sql.SQLException;

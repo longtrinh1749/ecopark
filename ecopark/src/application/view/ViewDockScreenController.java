@@ -1,9 +1,10 @@
-package application.controller;
+package application.view;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import application.controller.ViewDockController;
 import application.model.entity.Dock;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

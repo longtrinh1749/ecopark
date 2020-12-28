@@ -1,4 +1,6 @@
 package application.controller;
+
+import application.view.PaymentScreenController;
 /**
  * This function is used to get the infomation for the result screen
  * @author tungnt

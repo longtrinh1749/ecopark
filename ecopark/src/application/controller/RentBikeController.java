@@ -12,9 +12,9 @@ import java.util.Date;
 import application.model.entity.CreditCard;
 import application.model.entity.Transaction;
 import application.model.services.BikeService;
-import application.model.subsystems.interbank.InterbankBoundary;
-import application.model.subsystems.interbank.InterbankRequest;
-import application.model.subsystems.interbank.InterbankService;
+import application.subsystems.interbank.InterbankBoundary;
+import application.subsystems.interbank.InterbankRequest;
+import application.subsystems.interbank.InterbankService;
 import application.AppConfig;
 import application.common.exception.InvalidCardException;
 import application.model.entity.Order;
@@ -100,7 +100,7 @@ public class RentBikeController{
 	 * @param card
 	 * @throws ParseException InvalidCardException
 	 */	
-	void rentBike() throws InvalidCardException, SQLException {
+	public void rentBike() throws InvalidCardException, SQLException {
 		createOrder();
 		boolean validatePaymentResult = validatePaymentMethod();
 		if (validatePaymentResult) {
