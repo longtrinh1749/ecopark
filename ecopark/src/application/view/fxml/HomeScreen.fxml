@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.HomeScreenController">
+   <children>
+      <ImageView fitHeight="345.0" fitWidth="437.0" layoutX="313.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/bycicle.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="viewDockButton" layoutX="214.0" layoutY="325.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleViewDockClick" prefHeight="85.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="View Dock" textAlignment="CENTER" textFill="#4e6654" AnchorPane.bottomAnchor="218.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font></Button>
+      <Button fx:id="rentBikeButton" layoutX="557.0" layoutY="325.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRentBikeClick" prefHeight="85.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="Rent Bike" textAlignment="CENTER" textFill="#4f6856">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font></Button>
+      <Button fx:id="viewCurrentBikeButton" onAction = "#handleViewCurrentBikeClick" layoutX="213.0" layoutY="446.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="85.0" prefWidth="222.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="My Rental" textAlignment="CENTER" textFill="#4f6856">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font></Button>
+      <Button fx:id="returnBikeButton" layoutX="557.0" layoutY="446.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleReturnBikeClick" prefHeight="85.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="Return Bike" textAlignment="CENTER" textFill="#4f6856">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

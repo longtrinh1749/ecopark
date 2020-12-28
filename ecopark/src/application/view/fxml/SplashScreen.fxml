@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SplashScreenController">
+   <children>
+      <ImageView fitHeight="286.0" fitWidth="337.0" layoutX="346.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/bycicle.png" />
+         </image>
+      </ImageView>
+      <QuadCurve controlX="450.0" controlY="-400.0" endX="925.0" layoutX="50.0" layoutY="628.0" startX="-50.0" stroke="BLACK" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#3f9925" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </QuadCurve>
+      <Label layoutX="346.0" layoutY="263.0" text="EcoBikeRental">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="43.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.2857142857142857">
+               <stops>
+                  <Stop color="#21c940" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="282.0" fitWidth="262.0" layoutX="-16.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/tree2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="282.0" fitWidth="262.0" layoutX="726.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/tree2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

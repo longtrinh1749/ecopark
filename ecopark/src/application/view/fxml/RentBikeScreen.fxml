@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RentBikeScreenController">
+   <children>
+      <ImageView fitHeight="131.0" fitWidth="188.0" layoutX="22.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/bycicle.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="22.0" layoutY="102.0" text="Rent Bike">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5380952380952381">
+               <stops>
+                  <Stop color="#31da6f" />
+                  <Stop color="#5033e4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="bikeId" layoutX="359.0" layoutY="240.0" prefHeight="42.0" prefWidth="330.0" promptText="Bike ID">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="rentBike" layoutX="265.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleRentBikeClick" prefHeight="85.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="Rent Bike" textAlignment="CENTER" textFill="#4e6654">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font></Button>
+      <Button fx:id="home" layoutX="611.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleHomeClick" prefHeight="85.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="Home" textFill="#4e6654">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font></Button>
+      <Label layoutX="405.0" layoutY="158.0" text="Insert Bike ID" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5380952380952381">
+               <stops>
+                  <Stop color="#4dd36d" />
+                  <Stop color="#3653c6" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

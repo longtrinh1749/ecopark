@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ResultScreenController">
+   <children>
+      <ImageView fitHeight="131.0" fitWidth="188.0" layoutX="24.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/bycicle.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="46.0" layoutY="105.0" text="Result" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.3904761904761905">
+               <stops>
+                  <Stop color="#34eb74" />
+                  <Stop color="#6d29c6" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="148.0" prefHeight="133.0" prefWidth="704.0" text="Result" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="40.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.3904761904761905">
+               <stops>
+                  <Stop color="#44a865" />
+                  <Stop color="#212f80" offset="0.9923371647509578" />
+                  <Stop color="#34754a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="270.0" prefHeight="150.0" prefWidth="622.0" text="Message" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="40.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.3904761904761905">
+               <stops>
+                  <Stop color="#38a15b" />
+                  <Stop color="#38a15b" offset="0.007662835249042145" />
+                  <Stop color="#26358d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="okButton" alignment="CENTER" layoutX="425.0" layoutY="482.0" mnemonicParsing="false" onAction="#handleOkClick" prefHeight="48.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="OK" textAlignment="CENTER" textFill="#7ba880">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

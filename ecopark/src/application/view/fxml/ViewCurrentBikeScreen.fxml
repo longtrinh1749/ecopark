@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ViewCurrentBikeScreenHandler">
+   <children>
+      <Pane fx:id="infoPane" layoutX="270.0" layoutY="272.0" prefHeight="259.0" prefWidth="476.0" style="-fx-background-color: LIGHTCYAN; -fx-border-color: green;">
+         <children>
+            <Label layoutX="62.0" layoutY="33.0" text="Bike type:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="62.0" layoutY="66.0" text="Battery percentage:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="62.0" layoutY="96.0" text="Deposit Value:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="62.0" layoutY="130.0" text="Pay Factor:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Text fx:id="type" layoutX="262.0" layoutY="56.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Text>
+            <Text fx:id="battery" layoutX="262.0" layoutY="89.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Text>
+            <Text fx:id="deposit" layoutX="262.0" layoutY="119.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Text>
+            <Text fx:id="payFactor" layoutX="262.0" layoutY="153.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Text>
+            <Label layoutX="60.0" layoutY="160.0" text="Rent Time:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Text fx:id="rentTime" layoutX="262.0" layoutY="183.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="amount" layoutX="263.0" layoutY="213.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Label layoutX="61.0" layoutY="190.0" text="Rent Fee:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button id="back" layoutX="452.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleBackClick" prefHeight="44.0" prefWidth="112.0" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="Back" textFill="#478352">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font></Button>
+      <ImageView fx:id="imageBike" fitHeight="220.0" fitWidth="315.0" layoutX="375.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="131.0" fitWidth="188.0" layoutX="42.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/bycicle.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="42.0" layoutY="103.0" text="Your Bike">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.4">
+               <stops>
+                  <Stop color="#40bf5b" />
+                  <Stop color="#315fd3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

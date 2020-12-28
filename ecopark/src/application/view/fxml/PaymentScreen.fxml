@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PaymentScreenController">
+   <children>
+      <ImageView fitHeight="131.0" fitWidth="188.0" layoutX="23.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/bycicle.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="105.0" text="Payment">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.5333333333333334">
+               <stops>
+                  <Stop color="#4ecd70" />
+                  <Stop color="#4ecd70" offset="0.007662835249042145" />
+                  <Stop color="#2e26cd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="229.0" layoutY="135.0" text="Payment method" textFill="#4f6654">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="creditCard" layoutX="246.0" layoutY="195.0" mnemonicParsing="false" text="Credit card">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="bank" layoutX="622.0" layoutY="161.0" prefHeight="37.0" prefWidth="255.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="cardNumber" layoutX="622.0" layoutY="226.0" prefHeight="37.0" prefWidth="255.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="cardHolderName" layoutX="622.0" layoutY="289.0" prefHeight="37.0" prefWidth="255.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="experationDate" layoutX="622.0" layoutY="356.0" prefHeight="37.0" prefWidth="255.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Label layoutX="625.0" layoutY="193.0" text="Card number">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="622.0" layoutY="259.0" text="Card holder name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="622.0" layoutY="326.0" text="Experation date">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="625.0" layoutY="133.0" text="Bank">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="confirmPayment" layoutX="380.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleConfirmPaymentClick" style="-fx-background-color: linear-gradient(SPRINGGREEN, SNOW); -fx-background-radius: 30;" text="Confirm payment" textFill="#4e6654">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Button>
+      <TextField fx:id="securityCode" layoutX="622.0" layoutY="423.0" prefHeight="37.0" prefWidth="255.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Label layoutX="624.0" layoutY="393.0" text="Security code">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
