@@ -5,9 +5,10 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 
 import application.utils.db.DBConnection;
+import application.model.dao.TransactionDAO;
 import application.model.entity.CreditCard;
 
-public class TransactionDAOImpl {
+public class TransactionDAOImpl implements TransactionDAO{
 	private static String QUERY_INSERT = "insert into transaction values (?, ?, ?)";
 	
 	private Connection conn;

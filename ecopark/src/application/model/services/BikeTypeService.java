@@ -6,12 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import application.model.dao.BikeTypeDAO;
+import application.model.dao.impl.BikeTypeDAOImpl;
 
 public class BikeTypeService {
 	BikeTypeDAO bikeTypeDAO;
 	
-	public BikeTypeService(BikeTypeDAO bikeTypeDAO) {
-		this.bikeTypeDAO = bikeTypeDAO;
+	public BikeTypeService() {
+		this.bikeTypeDAO = new BikeTypeDAOImpl();
 	}
 	
 	public Map<String, Object> getBikeTypeById(int id) {

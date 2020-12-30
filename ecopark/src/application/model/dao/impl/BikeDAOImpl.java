@@ -10,6 +10,7 @@ import java.util.Map;
 
 import application.model.dao.BikeDAO;
 import application.model.entity.Bike;
+import application.model.services.BikeTypeService;
 import application.utils.db.DBConnection;
 
 
@@ -23,6 +24,7 @@ public class BikeDAOImpl implements BikeDAO {
 	private Connection conn;
 	PreparedStatement pstm;
 	Bike bike;
+	BikeTypeService bikeTypeService = new BikeTypeService();
 	
 	public BikeDAOImpl() {
 		try {
@@ -45,14 +47,13 @@ public class BikeDAOImpl implements BikeDAO {
 			while (rs.next()) {
 				Bike bike = get(rs.getString(1));
 				bikeList.add(bike);	
-				return bikeList;
 			}
+			return bikeList;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		} 
-		return null;
 	}
 	
 	public Bike get(String id) {
@@ -68,6 +69,11 @@ public class BikeDAOImpl implements BikeDAO {
 				bike.setBatteryStatus(rs.getInt(2));
 				bike.setImageURL(rs.getString(5));
 				bike.setType(rs.getInt(4));
+				bike.setDockId(rs.getInt(3));
+				Map<String, Object> m = bikeTypeService.getBikeTypeById(bike.getType());
+				bike.setTypeName((String) m.get("typename"));
+				bike.setDepositValue((double) m.get("typevalue"));
+				bike.setPayFactor((double) m.get("typepayfactor"));
 				return bike;
 			}
 		} catch (SQLException e) {

@@ -37,8 +37,8 @@ public class Bike {
 	}
 	public String getStringBatteryStatus() {
 		String stringBattery = Double.toString(batteryStatus) + " %";
-		if ( typeName.equals("Standard e-bike") ) return stringBattery;
-		else return "na";
+		if ( type == 2 ) return stringBattery;
+		else return "n/a";
 	}
 	public void setBatteryStatus(double batteryStatus) {
 		this.batteryStatus = batteryStatus;
@@ -105,4 +105,10 @@ public class Bike {
 	 * this method is used to set the dockId of the rented bike to be null 
 	 * @param bikeId
 	 */
+	@Override
+	public String toString() {
+		return "Bike [id=" + id + ", dockId=" + dockId + ", typeName=" + typeName + ", depositValue=" + depositValue
+				+ ", batteryStatus=" + batteryStatus + ", imageURL=" + imageURL + ", type=" + type + ", payFactor="
+				+ payFactor + "]";
+	}
 }

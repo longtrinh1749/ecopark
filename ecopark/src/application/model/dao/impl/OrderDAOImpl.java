@@ -43,6 +43,12 @@ public class OrderDAOImpl implements OrderDAO {
 	@Override
 	public boolean insert(Order order) {
 		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean remove(Order order) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 

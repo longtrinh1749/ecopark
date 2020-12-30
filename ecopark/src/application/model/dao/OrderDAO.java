@@ -9,4 +9,5 @@ public interface OrderDAO {
 	
 	public Order get(String accountId);
 	public boolean insert(Order order);
+	public boolean remove(Order order);
 }

@@ -12,12 +12,12 @@ import application.model.dao.impl.BikeDAOImpl;
 import application.model.entity.Bike;
 import application.model.entity.Dock;
 
-public class BikeService {
+public class BikeService implements BikeServiceInterface {
 	BikeTypeService bikeTypeService;
 	BikeDAO bikeDAO;
 	
 	public BikeService() {
-//		bikeTypeService = new BikeTypeService();
+		bikeTypeService = new BikeTypeService();
 		bikeDAO = new BikeDAOImpl();
 	}
 	
@@ -34,7 +34,7 @@ public class BikeService {
 		return bike;
 	}
 
-	public int updateDockIdByRentBike(String bikeId) throws SQLException {
+	public int updateDockIdByRentBike(String bikeId) {
 		int rs = bikeDAO.updateNullDockId(bikeId);
 		return rs;
 	}

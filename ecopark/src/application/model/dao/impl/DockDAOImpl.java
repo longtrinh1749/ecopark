@@ -76,7 +76,7 @@ public class DockDAOImpl implements DockDAO {
 	
 	public List<Dock> getByAddress(String address) {
 		String sql = QUERY_SELECT_BY_ADDRESS;
-		dockList = null;
+		dockList = new ArrayList<Dock>();
 		try {
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, "%" + address + "%");
@@ -102,25 +102,29 @@ public class DockDAOImpl implements DockDAO {
 			ResultSet rs = pstm.executeQuery();
 			if(rs.next()) {
 				occupiedLot = rs.getInt(1);
+				return occupiedLot;
 			} else return 0;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return 0;
 		}
-		return 0; 
 	}
 	
 	public List<Dock> getAvailableDockForReturnBike() {
 		String sql = "select * from dock where (select count(*) from bike where dockId = dock.id) < dock.area;";
-		dockList = null;
+		dockList = new ArrayList<Dock>();
 		try {
 			pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
-				Dock dock = new Dock(rs.getInt(1), rs.getString(6));
-				dockList.add(dock);
+				int a = rs.getInt(1);
+				System.out.println(a);
+				String b = rs.getString(6);
+				System.out.println(b);
+				Dock dock = new Dock(a, b);
 				System.out.println(dock.getAddress());
+				dockList.add(new Dock(a, b));
 			}
 			return dockList;
 		} catch (SQLException e) {

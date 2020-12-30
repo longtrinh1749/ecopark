@@ -1,13 +1,14 @@
 package application.model.services;
 
 import application.model.dao.TransactionDAO;
+import application.model.dao.impl.TransactionDAOImpl;
 import application.model.entity.Transaction;
 
 public class TransactionService {
 	TransactionDAO transactionDAO;
 	
-	public TransactionService(TransactionDAO transactionDAO) {
-		this.transactionDAO = transactionDAO; 
+	public TransactionService() {
+		this.transactionDAO = new TransactionDAOImpl(); 
 	}
 	
 	public boolean saveTransaction(Transaction transaction) {
