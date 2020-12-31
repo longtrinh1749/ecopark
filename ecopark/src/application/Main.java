@@ -8,6 +8,7 @@ import application.model.dao.DockDAO;
 import application.model.entity.CreditCard;
 import application.model.entity.Transaction;
 import application.model.services.BikeService;
+import application.model.services.BikeTypeService;
 import application.model.services.DockService;
 import application.subsystems.interbank.InterbankBoundary;
 import application.subsystems.interbank.InterbankRequest;
@@ -77,6 +78,11 @@ try {
 
 	public static void main(String[] args) {
 		launch(args);
+//		System.out.println(new BikeService().updateDockIdByReturnBike("1", 3));
+//		System.out.println(new BikeService().getBikeInfo("1").getDockId());
+//		System.out.println(new BikeTypeService().getBikeTypeById(1).get("typename"));
+//		new DockService().getAvailableDockForReturnBike();
+//		System.out.println(new DockService().getDockList().size());
 		}
 	
 }

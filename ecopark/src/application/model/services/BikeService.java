@@ -8,65 +8,39 @@ import java.util.Map;
 
 import application.model.dao.BikeDAO;
 import application.model.dao.DockDAO;
+import application.model.dao.impl.BikeDAOImpl;
 import application.model.entity.Bike;
 import application.model.entity.Dock;
 
-public class BikeService extends BaseService {
+public class BikeService implements BikeServiceInterface {
 	BikeTypeService bikeTypeService;
 	BikeDAO bikeDAO;
 	
 	public BikeService() {
 		bikeTypeService = new BikeTypeService();
-		bikeDAO = new BikeDAO();
+		bikeDAO = new BikeDAOImpl();
 	}
 	
 	public List<Bike> getBikeList(int dockId) {
-		List<Bike> bikeList = new ArrayList<Bike>();
-		ResultSet rs = bikeDAO.getAllBike(dockId);
-		try {
-			while (rs.next()) {
-				Map<String, Object> m = bikeTypeService.getBikeTypeById(rs.getInt(4));
-//				Bike bike = new Bike(rs.getString(1), (String) m.get("typename"), (double) m.get("typevalue"), rs.getString(5));
-				Bike bike = getBikeInfo(rs.getString(1));
-				bikeList.add(bike);
-				System.out.println(bike.getBatteryStatus());
-			}
-			return bikeList;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
+		return bikeDAO.getAll(dockId);
 	}
 	
 	public Bike getBikeInfo(String id) {
-		ResultSet rs = bikeDAO.getBikeById(id);
-		Bike bike;
-		try {
-			while (rs.next()) {
-				Map<String, Object> m = bikeTypeService.getBikeTypeById(rs.getInt(4));
-				if (m != null) {
-					bike = new Bike(rs.getString(1), (String) m.get("typename"), (double) m.get("typevalue"), rs.getInt(2),
-							rs.getString(5), (double) m.get("typepayfactor"));
-					System.out.println(bike.getTypeName());
-					return bike;
-				}
-			}
-			return null;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
+		Bike bike = bikeDAO.get(id);
+		Map<String, Object> m = bikeTypeService.getBikeTypeById(bike.getType());
+		bike.setTypeName((String) m.get("typename"));
+		bike.setDepositValue((double) m.get("typevalue"));
+		bike.setPayFactor((double) m.get("typepayfactor"));
+		return bike;
 	}
 
-	public int updateDockIdByRentBike(String bikeId) throws SQLException {
-		int rs = bikeDAO.updateBikeDockIdByRentBike(bikeId);
+	public int updateDockIdByRentBike(String bikeId) {
+		int rs = bikeDAO.updateNullDockId(bikeId);
 		return rs;
 	}
 	
 	public int updateDockIdByReturnBike(String bikeId, int dockId) {
-		int rs = bikeDAO.updateBikeDockId(bikeId, dockId);
+		int rs = bikeDAO.updateDockId(bikeId, dockId);
 		return rs;
 	}
 }

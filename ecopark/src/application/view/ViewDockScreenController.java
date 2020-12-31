@@ -107,6 +107,7 @@ public class ViewDockScreenController {
 							);
 
 					DockDetailedScreenController controller = loader.getController();
+					System.out.println("tmp dock id " + tmpDockId);
 					controller.init(tmpDockId);
 
 					stage.show();

@@ -47,6 +47,7 @@ public class DockDetailedScreenController {
 		this.dockId = dockId;
 		displayDockInfo();
 		List<Bike> testList = bikeHandler.getBikeList(dockId);
+		System.out.println("Bike List size " + testList.get(3).getStringBatteryStatus());
 		displayBikeList(testList);
 	}
 

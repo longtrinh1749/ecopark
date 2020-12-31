@@ -1,9 +1,9 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: localhost    Database: ecobikerentaldb
+-- Host: 127.0.0.1    Database: ecobikerentaldb
 -- ------------------------------------------------------
 -- Server version	8.0.19
-use ecobikerentaldb;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -18,7 +18,7 @@ use ecobikerentaldb;
 --
 -- Table structure for table `account`
 --
-LOCK TABLES `account` WRITE;
+
 DROP TABLE IF EXISTS `account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -51,19 +51,28 @@ DROP TABLE IF EXISTS `bike`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `bike` (
-  `id` varchar(20) NOT NULL, 
+  `id` varchar(20) NOT NULL,
   `battery_status` int NOT NULL,
-  `dockId` int NULL,
+  `dockId` int DEFAULT NULL,
   `typeId` int NOT NULL,
-  `image_url` varchar(250) default null,
+  `image_url` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `dockId` (`dockId`),
   KEY `typeId` (`typeId`),
   CONSTRAINT `bike_ibfk_1` FOREIGN KEY (`dockId`) REFERENCES `dock` (`id`),
   CONSTRAINT `bike_ibfk_2` FOREIGN KEY (`typeId`) REFERENCES `type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `bike`
+--
+
+LOCK TABLES `bike` WRITE;
+/*!40000 ALTER TABLE `bike` DISABLE KEYS */;
+INSERT INTO `bike` VALUES ('1',13,1,3,'assets/double.png'),('10',58,1,1,'assets/standard.png'),('100',80,10,2,'assets/electric.png'),('11',69,2,3,'assets/double.png'),('12',0,2,3,'assets/double.png'),('13',59,2,1,'assets/standard.png'),('14',48,2,2,'assets/electric.png'),('15',8,2,2,'assets/electric.png'),('16',78,2,2,'assets/electric.png'),('17',40,2,1,'assets/standard.png'),('18',66,2,2,'assets/electric.png'),('19',66,2,3,'assets/double.png'),('2',40,1,3,'assets/double.png'),('20',37,2,2,'assets/electric.png'),('21',19,3,1,'assets/standard.png'),('22',0,3,2,'assets/electric.png'),('23',30,3,3,'assets/double.png'),('24',27,3,2,'assets/electric.png'),('25',25,3,2,'assets/electric.png'),('26',41,3,2,'assets/electric.png'),('27',45,3,2,'assets/electric.png'),('28',93,3,1,'assets/standard.png'),('29',4,3,3,'assets/double.png'),('3',96,1,3,'assets/double.png'),('30',7,3,1,'assets/standard.png'),('31',43,4,1,'assets/standard.png'),('32',49,4,3,'assets/double.png'),('33',72,4,1,'assets/standard.png'),('34',11,4,2,'assets/electric.png'),('35',22,4,1,'assets/standard.png'),('36',27,4,1,'assets/standard.png'),('37',56,4,2,'assets/electric.png'),('38',77,4,2,'assets/electric.png'),('39',97,4,3,'assets/double.png'),('4',7,1,3,'assets/double.png'),('40',60,4,1,'assets/standard.png'),('41',20,5,1,'assets/standard.png'),('42',70,5,1,'assets/standard.png'),('43',81,5,1,'assets/standard.png'),('44',97,5,3,'assets/double.png'),('45',80,5,1,'assets/standard.png'),('46',63,5,2,'assets/electric.png'),('47',14,5,2,'assets/electric.png'),('48',56,5,3,'assets/double.png'),('49',28,5,1,'assets/standard.png'),('5',89,1,1,'assets/standard.png'),('50',49,5,2,'assets/electric.png'),('51',43,6,3,'assets/double.png'),('52',29,6,1,'assets/standard.png'),('53',42,6,2,'assets/electric.png'),('54',87,6,2,'assets/electric.png'),('55',97,6,2,'assets/electric.png'),('56',73,6,1,'assets/standard.png'),('57',14,6,2,'assets/electric.png'),('58',72,6,2,'assets/electric.png'),('59',12,6,2,'assets/electric.png'),('6',44,1,3,'assets/double.png'),('60',98,6,1,'assets/standard.png'),('61',64,7,2,'assets/electric.png'),('62',63,7,3,'assets/double.png'),('63',77,7,3,'assets/double.png'),('64',50,7,1,'assets/standard.png'),('65',24,7,2,'assets/electric.png'),('66',14,7,1,'assets/standard.png'),('67',56,7,1,'assets/standard.png'),('68',99,7,3,'assets/double.png'),('69',69,7,3,'assets/double.png'),('7',86,1,1,'assets/standard.png'),('70',5,7,2,'assets/electric.png'),('71',92,8,3,'assets/double.png'),('72',48,8,3,'assets/double.png'),('73',35,8,3,'assets/double.png'),('74',65,8,2,'assets/electric.png'),('75',65,8,1,'assets/standard.png'),('76',26,8,1,'assets/standard.png'),('77',60,8,3,'assets/double.png'),('78',6,8,1,'assets/standard.png'),('79',77,8,3,'assets/double.png'),('8',88,1,3,'assets/double.png'),('80',95,8,2,'assets/electric.png'),('81',70,9,2,'assets/electric.png'),('82',87,9,2,'assets/electric.png'),('83',23,9,1,'assets/standard.png'),('84',85,9,1,'assets/standard.png'),('85',54,9,1,'assets/standard.png'),('86',5,9,3,'assets/double.png'),('87',68,9,3,'assets/double.png'),('88',85,9,3,'assets/double.png'),('89',70,9,3,'assets/double.png'),('9',72,1,3,'assets/double.png'),('90',83,9,2,'assets/electric.png'),('91',46,10,1,'assets/standard.png'),('92',69,10,3,'assets/double.png'),('93',15,10,1,'assets/standard.png'),('94',99,10,3,'assets/double.png'),('95',28,10,2,'assets/electric.png'),('96',27,10,3,'assets/double.png'),('97',23,10,1,'assets/standard.png'),('98',75,10,2,'assets/electric.png'),('99',59,10,3,'assets/double.png');
+/*!40000 ALTER TABLE `bike` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- Table structure for AccountOrder
 create table AccountOrder (
@@ -71,6 +80,7 @@ create table AccountOrder (
     bikeid varchar(20) not null,
     `rent_start` varchar(20) NULL
 );
+
 --
 -- Table structure for table `card`
 --
@@ -94,7 +104,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
-INSERT INTO `card` VALUES (1,1111111,'Ngo Quang Ming','VietCongBank','1225'),(2,2222222,'Trinh Long','VietteenBank','1230');
+INSERT INTO `card` VALUES (1,'1111111','Ngo Quang Ming','VietCongBank','1225'),(2,'2222222','Trinh Long','VietteenBank','1230');
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,40 +178,16 @@ CREATE TABLE `dock` (
   `name` varchar(45) NOT NULL,
   `address` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dock`
 --
 
-
 LOCK TABLES `dock` WRITE;
 /*!40000 ALTER TABLE `dock` DISABLE KEYS */;
-INSERT INTO `dock` VALUES (1,'1,1',3,45,'Dockter','Dai Co Viet 1st');
-INSERT INTO `dock` VALUES (2,'1,2',3,45,'Dockter','Dai Co Viet 2nd');
-INSERT INTO `dock` VALUES (3,'2,1',3,45,'Dockter','Dai Co Viet 3rd');
-INSERT INTO `dock` VALUES (4,'2,2',3,45,'Dockter','Dai Co Viet 4th');
-INSERT INTO `dock` VALUES (5,'1,3',3,45,'Dockter','Dai Co Viet 5th');
-INSERT INTO `dock` VALUES (6,'3,1',3,45,'Dockter','Dai Co Viet 6th');
-INSERT INTO `dock` VALUES (7,'10,10',30,100,'Dockter','Hai Ba Trung 12th');
-INSERT INTO `dock` VALUES (8,'20,20',4,4,'Dockter','Dai La 77th');
-INSERT INTO `dock` VALUES (9,'50,50',30,100,'Dockter','Ham Nghi 1st');
-INSERT INTO `dock` VALUES (10,'100,100',30,100,'Dockter','Hue 30th');
-INSERT INTO `dock` VALUES (11,'10,10',30,100,'Dockter','Hai Ba Trung 50th');
-INSERT INTO `dock` VALUES (12,'10,10',0,0,'Dockter','DCM 1st');
-INSERT INTO `dock` VALUES (13,'1,1',3,45,'Dockter','Dai Co Viet 1st');
-INSERT INTO `dock` VALUES (14,'1,2',3,45,'Dockter','Dai Co Viet 2nd');
-INSERT INTO `dock` VALUES (15,'2,1',3,45,'Dockter','Dai Co Viet 3rd');
-INSERT INTO `dock` VALUES (16,'2,2',3,45,'Dockter','Dai Co Viet 4th');
-INSERT INTO `dock` VALUES (17,'1,3',3,45,'Dockter','Dai Co Viet 5th');
-INSERT INTO `dock` VALUES (18,'3,1',3,45,'Dockter','Dai Co Viet 6th');
-INSERT INTO `dock` VALUES (19,'10,10',30,100,'Dockter','Hai Ba Trung 12th');
-INSERT INTO `dock` VALUES (20,'20,20',4,4,'Dockter','Dai La 77th');
-INSERT INTO `dock` VALUES (21,'50,50',30,100,'Dockter','Ham Nghi 1st');
-INSERT INTO `dock` VALUES (22,'100,100',30,100,'Dockter','Hue 30th');
-INSERT INTO `dock` VALUES (23,'10,10',30,100,'Dockter','Hai Ba Trung 50th');
-INSERT INTO `dock` VALUES (24,'10,10',0,0,'Dockter','DCM 1st');
+INSERT INTO `dock` VALUES (1,'1,1',3,45,'Dockter','Dai Co Viet 1st'),(2,'1,2',3,45,'Dockter','Chua Boc 2nd'),(3,'2,1',3,45,'Dockter','Nguyen Trai 3rd'),(4,'2,2',3,45,'Dockter','Ba Trieu 4th'),(5,'1,3',3,45,'Dockter','Vu Tong Phan 5th'),(6,'3,1',3,45,'Dockter','Dai Co Viet 6th'),(7,'10,10',30,100,'Dockter','Hai Ba Trung 12th'),(8,'20,20',4,4,'Dockter','Dai La 77th'),(9,'50,50',30,100,'Dockter','Ham Nghi 1st'),(10,'100,100',30,100,'Dockter','Hue 30th'),(11,'10,10',30,100,'Dockter','Hai Ba Trung 50th'),(13,'1,1',3,45,'Dockter','Thang Long 1st'),(14,'1,2',3,45,'Dockter','Le Thanh Nghi 2nd'),(15,'2,1',3,45,'Dockter','Tran Dai Nghia 3rd'),(16,'2,2',3,45,'Dockter','Lang 4th'),(17,'1,3',3,45,'Dockter','Lang Ha 5th'),(18,'3,1',3,45,'Dockter','Bach Mai 6th'),(19,'10,10',30,100,'Dockter','Hai Ba Trung 12th'),(20,'20,20',4,4,'Dockter','Dai La 77th'),(21,'50,50',30,100,'Dockter','Ham Nghi 1st'),(22,'100,100',30,100,'Dockter','Hue 30th'),(23,'10,10',30,100,'Dockter','Hai Ba Trung 50th'),(24,'10,10',0,0,'Dockter','DCM 1st');
 /*!40000 ALTER TABLE `dock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +204,7 @@ CREATE TABLE `invoice` (
   `rent_end` datetime NOT NULL,
   `accountId` int NOT NULL,
   `bikeId` varchar(20) NOT NULL,
-  `total` double not null,
+  `total` double NOT NULL,
   PRIMARY KEY (`id`),
   KEY `accountId` (`accountId`),
   KEY `bikeId` (`bikeId`),
@@ -233,7 +219,7 @@ CREATE TABLE `invoice` (
 
 LOCK TABLES `invoice` WRITE;
 /*!40000 ALTER TABLE `invoice` DISABLE KEYS */;
-INSERT INTO `invoice` VALUES (1,'2020-11-02 09:30:00','2020-11-01 09:45:00',1,1,300000),(2,'2020-11-01 09:31:00','2020-11-01 09:46:00',2,2,400000);
+INSERT INTO `invoice` VALUES (1,'2020-11-02 09:30:00','2020-11-01 09:45:00',1,'1',300000),(2,'2020-11-01 09:31:00','2020-11-01 09:46:00',2,'2',400000);
 /*!40000 ALTER TABLE `invoice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,7 +238,7 @@ CREATE TABLE `transaction` (
   PRIMARY KEY (`id`),
   KEY `cardId` (`cardId`),
   CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`cardId`) REFERENCES `card` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,12 +274,12 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-
+INSERT INTO `type` VALUES (1,'Standard bike',400000,1,NULL),(2,'Standard e-bike',700000,1.5,NULL),(3,'Twin bike',550000,1.5,NULL);
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'ecobikerental'
+-- Dumping events for database 'ecobikerentaldb'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -305,5 +291,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-28  9:05:33
-
+-- Dump completed on 2020-12-26 10:11:41
