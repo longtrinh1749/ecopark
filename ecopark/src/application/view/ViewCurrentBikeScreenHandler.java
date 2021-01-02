@@ -2,18 +2,23 @@ package application.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import application.model.entity.Bike;
 import application.model.entity.Invoice;
 import application.model.entity.Order;
 import application.model.services.BikeService;
 import application.model.services.BikeTypeService;
+import application.model.services.PaymentService;
+import application.model.services.PaymentServiceInterface;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -49,7 +54,8 @@ public class ViewCurrentBikeScreenHandler implements Initializable{
 	@FXML
 	private ImageView imageBike;
 	
-
+	@FXML
+	private Label batteryLabel;
 	/**
 	 *This method initialize the screen
 	 */
@@ -63,16 +69,26 @@ public class ViewCurrentBikeScreenHandler implements Initializable{
 	 * @param bike
 	 */
 	public void init(Bike bike) {
-		Invoice  invoice = new Invoice(Order.getOrder());
 		File file = new File(bike.getImageURL());
         Image image = new Image(file.toURI().toString());
 		imageBike.setImage(image);
 		deposit.setText(Double.toString(bike.getDepositValue()) + " vnd");
 		battery.setText(bike.getStringBatteryStatus());
+		if ( bike.getType() != 2 ) {
+			battery.setOpacity(0);
+			batteryLabel.setOpacity(0);
+		}
 		type.setText(bike.getTypeName());
 		payFactor.setText(Double.toString(bike.getPayFactor()));
-		rentTime.setText(invoice.getStringDuration());
-		amount.setText(invoice.getStringCost());
+		
+		Date rentEndTime = new Date();
+		long diff =rentEndTime.getTime() - Order.getOrder().getRentStartTime().getTime();
+		long minutesDiff = TimeUnit.MILLISECONDS.toMinutes(diff);
+		String stringDuration = Long.toString(minutesDiff) + " minutes";
+		
+		rentTime.setText(stringDuration);
+		PaymentServiceInterface paymentService = new PaymentService();
+		amount.setText(Double.toString(paymentService.calculateCost(Order.getOrder())) + "vnd");
 		
 	}
 

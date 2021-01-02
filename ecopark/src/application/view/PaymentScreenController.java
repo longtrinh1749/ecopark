@@ -38,10 +38,14 @@ public class PaymentScreenController{
 	private TextField securityCode;
 	@FXML 
 	private RadioButton creditCard;
+	RentBikeController rentBikeController;
 	/**
 	 * This function is used to init the payment info correct to api request
 	 * @throws IOException
 	 */
+	public PaymentScreenController() {
+		this.rentBikeController = new RentBikeController();
+	}
 	@FXML
 	public void initialize() throws IOException {
 		creditCard.setSelected(true);
@@ -67,15 +71,14 @@ public class PaymentScreenController{
 	 * @throws SQLException
 	 */
 	public void handleConfirmPaymentClick() throws IOException, ParseException, SQLException {
-	RentBikeController rentBikeController = new RentBikeController();
 	CreditCard card = new CreditCard(bank.getText(), cardNumber.getText(), cardHolderName.getText(), experationDate.getText(), securityCode.getText());
 	rentBikeController.setCard(card);
 	try {
 		rentBikeController.rentBike();
 		
 		//passing the payment result value and change to result screen
-		result = rentBikeController.getTransactionResult();
-		message = rentBikeController.getTransactionMessage();
+		result = rentBikeController.getTransaction().getTransactionResult();
+		message = rentBikeController.getTransaction().getTransactionMessage();
 	    Stage stage;
 	    Parent root;
 	    stage = (Stage) confirmPayment.getScene().getWindow();

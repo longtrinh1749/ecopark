@@ -12,6 +12,7 @@ public class Transaction {
 	private String createdAt;
 	private String interbankTransactionId;
 	private String errorCode;
+	
 	public CreditCard getCard() {
 		return card;
 	}
@@ -48,7 +49,7 @@ public class Transaction {
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
 	}
-	public String getTrasactionMessage() {
+	public String getTransactionMessage() {
 		switch ( this.errorCode ) {
 		case "00": 
 			return "Have a nice ride!";

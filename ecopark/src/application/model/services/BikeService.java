@@ -25,12 +25,14 @@ public class BikeService implements BikeServiceInterface {
 		return bikeDAO.getAll(dockId);
 	}
 	
-	public Bike getBikeInfo(String id) {
+	public Bike getBikeInfo(String id) { 
 		Bike bike = bikeDAO.get(id);
-		Map<String, Object> m = bikeTypeService.getBikeTypeById(bike.getType());
-		bike.setTypeName((String) m.get("typename"));
-		bike.setDepositValue((double) m.get("typevalue"));
-		bike.setPayFactor((double) m.get("typepayfactor"));
+		if(bike != null) {
+			Map<String, Object> m = bikeTypeService.getBikeTypeById(bike.getType());
+			bike.setTypeName((String) m.get("typename"));
+			bike.setDepositValue((double) m.get("typevalue"));
+			bike.setPayFactor((double) m.get("typepayfactor"));
+		}
 		return bike;
 	}
 

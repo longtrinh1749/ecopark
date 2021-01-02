@@ -8,7 +8,7 @@ import java.util.Map;
 import application.model.dao.BikeTypeDAO;
 import application.model.dao.impl.BikeTypeDAOImpl;
 
-public class BikeTypeService {
+public class BikeTypeService implements BikeTypeServiceInterface{
 	BikeTypeDAO bikeTypeDAO;
 	
 	public BikeTypeService() {

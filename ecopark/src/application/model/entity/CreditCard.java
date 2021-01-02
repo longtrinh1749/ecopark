@@ -76,43 +76,4 @@ public class CreditCard {
 		this.expireDate = expireDate;
 		this.cvv = cvv;
 	}
-	public boolean validateCard() {
-		if ( validateCardNumber(cardNumber) && validateCardHolder(cardHolder) && validateExpiredDate(expireDate) &&
-		validateBank(bankName)) return true;
-		else return false;
-	}
-	
-	public boolean validateCardNumber(String cardNumber) {
-		// check if card number null
-		if (cardNumber.isEmpty() || cardNumber == "") return false;
-		return true;
-	}
-	public boolean validateCardHolder(String cardHolder) {
-		// check if card holder null
-		if ( cardHolder.isEmpty()) return false;
-		return true;
-	}
-	public boolean validateBank(String bankName) {
-		//check if bank name null
-		if ( bankName.isEmpty() ) return false;
-		return true;
-	}
-	public boolean validateExpiredDate(String expireDate) {
-		// check if expired date null
-		if ( expireDate.isEmpty()) return false;
-		
-		//check if expired date have 4 characters
-		if ( expireDate.length() != 4) return false;
-		
-		// check if expired date right format
-		String stringMonth = expireDate.substring(0, 2);
-		String stringYear = expireDate.substring(2, 4);
-		int month = Integer.parseInt(stringMonth);
-		int year = Integer.parseInt(stringYear);
-		System.out.println(stringMonth);
-		System.out.println(stringYear);
-		if ( month < 1 || month > 12 || year < 20 )
-			return false;
-		return true;
-	}
 }

@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class Invoice {
 	
-	private Order order;
+	private Bike bike;
+	private CreditCard card;
+	private Date rentStartTime;
 	private Date rentEndTime;
 	private double total;
 	
@@ -21,7 +23,7 @@ public class Invoice {
 	 * @return rental duration in minutes
 	 */
 	long getDuration() {
-		long diff =rentEndTime.getTime() - order.getRentStartTime().getTime();
+		long diff =rentEndTime.getTime() - rentStartTime.getTime();
 		long minutesDiff = TimeUnit.MILLISECONDS.toMinutes(diff);
 		return minutesDiff;
 	}
@@ -40,29 +42,16 @@ public class Invoice {
 	 * @return String cost
 	 */
 	public String getStringCost() {
-		String stringCost = Double.toString(calculateCost()) + " vnd";
+		String stringCost = Double.toString(total) + " vnd";
 		return stringCost;
-	}
-	
-	public Order getOrder() {
-		return this.order;
 	}
 	
 	public double getTotal() {
 		  return this.total;
 	}
 	
-	/**
-	 * This function calculate the cost of the rental 
-	 * @return Double: cost
-	 */
-	double calculateCost() {
-		double cost = 0;
-		long minutesDiff = getDuration();
-		if ( minutesDiff >= 10 && minutesDiff <=30  ) cost = 10;
-		if ( minutesDiff > 30 ) cost = (int) (10000 + (Math.ceil(( minutesDiff - 30.0 )/15))*3000);
-		double amount = order.getBike().getPayFactor()*cost;
-		return amount;
+	public Bike getBike() {
+		return bike;
 	}
 	
 	// a test function to test the calculate cost func 
@@ -86,7 +75,7 @@ public class Invoice {
 	 */
 	public String getStringRentStartTime() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-		String stringRentStartTime = formatter.format(order.getRentStartTime());
+		String stringRentStartTime = formatter.format(rentStartTime);
 		return stringRentStartTime;
 	}
 	
@@ -100,10 +89,12 @@ public class Invoice {
 		return stringEndTime;
 	}
 	
-	public Invoice(Order order) {
-		this.order = order;
+	public Invoice(Bike bike, CreditCard card, Date rentStartTime, double total) {
+		this.bike = bike; 
+		this.card = card;
+		this.rentStartTime = rentStartTime;
+		this.total = total;
 		Date rentEndTime = new Date();
 		this.rentEndTime = rentEndTime;
-		this.total = calculateCost();
 	}
 }

@@ -23,7 +23,7 @@ public class InvoiceController {
 	}
 	
 	public String getBikeId() {
-		return invoice.getOrder().getBike().getId();
+		return invoice.getBike().getId();
 	}
 	public String getRentStartTime() {
 		return invoice.getStringRentStartTime();

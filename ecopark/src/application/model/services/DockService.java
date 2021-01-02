@@ -9,7 +9,7 @@ import application.model.dao.DockDAO;
 import application.model.dao.impl.DockDAOImpl;
 import application.model.entity.Dock;
 
-public class DockService {
+public class DockService implements DockServiceInterface{
 	
 	DockDAO dockDAO;
 	

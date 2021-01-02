@@ -3,12 +3,13 @@ package application.controller;
 
 import application.model.entity.Dock;
 import application.model.services.DockService;
+import application.model.services.DockServiceInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewDockController {
-  private DockService dockServiceHandler;
+  private DockServiceInterface dockServiceHandler;
   
   public ViewDockController() {
     this.dockServiceHandler = new DockService();

@@ -8,6 +8,6 @@ public class Config {
 	public static final String HOST_NAME = "localhost";
 	public static final String CONNECTION_URL = "jdbc:mysql://" + HOST_NAME + ":3306/" + DB_NAME;
 	public static final String USER = "root";
-	public static final String PASS = "root";
+	public static final String PASS = "1091999";
 
 }

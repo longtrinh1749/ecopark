@@ -16,7 +16,7 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label layoutX="62.0" layoutY="66.0" text="Battery percentage:">
+            <Label fx:id="batteryLabel" layoutX="60.0" layoutY="190.0" text="Battery percentage:">
                <font>
                   <Font size="20.0" />
                </font></Label>
@@ -32,7 +32,7 @@
                <font>
                   <Font size="20.0" />
                </font></Text>
-            <Text fx:id="battery" layoutX="262.0" layoutY="89.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+            <Text fx:id="battery" layoutX="260.0" layoutY="213.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
                <font>
                   <Font size="20.0" />
                </font></Text>
@@ -54,12 +54,12 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="amount" layoutX="263.0" layoutY="213.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+            <Text fx:id="amount" layoutX="263.0" layoutY="90.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Label layoutX="61.0" layoutY="190.0" text="Rent Fee:">
+            <Label layoutX="61.0" layoutY="67.0" text="Rent Fee:">
                <font>
                   <Font size="20.0" />
                </font>

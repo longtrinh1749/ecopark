@@ -89,9 +89,6 @@ public class HomeScreenController{
 			stage = (Stage) viewCurrentBikeButton.getScene().getWindow();
 			try {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/fxml/ViewCurrentBikeScreen.fxml"));
-				//
-				//    		Stage stage;
-				//    		stage = (Stage) bikeId.getScene().getWindow();
 				stage.setScene(new Scene(loader.load()));
 				ViewCurrentBikeScreenHandler controller = loader.getController();
 				controller.init(Order.getOrder().getBike());

@@ -4,7 +4,7 @@ import application.model.dao.TransactionDAO;
 import application.model.dao.impl.TransactionDAOImpl;
 import application.model.entity.Transaction;
 
-public class TransactionService {
+public class TransactionService implements TransactionServiceInterface{
 	TransactionDAO transactionDAO;
 	
 	public TransactionService() {

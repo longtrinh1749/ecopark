@@ -5,6 +5,7 @@ import java.io.IOException;
 import application.controller.RentBikeController;
 import application.model.entity.Bike;
 import application.model.services.BikeService;
+import application.model.services.BikeServiceInterface;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,18 +29,22 @@ public class RentBikeScreenController {
 	private Button home;
 	@FXML
 	private Button rentBike;
+	private BikeServiceInterface bikeService;
+	private RentBikeController rentbikecontroller;
+	
+	public RentBikeScreenController() {
+		bikeService = new BikeService();
+		rentbikecontroller = new RentBikeController();
+		}
 /**
  * This function is used to get the rent bike id and show payment screen  	
  * @throws IOException 
  */
 	public void handleRentBikeClick() throws IOException { 
-		BikeService bikeservice = new BikeService();
-        Bike bike = bikeservice.getBikeInfo(bikeId.getText());
+        Bike bike = bikeService.getBikeInfo(bikeId.getText());
         // if successfully get the bike from DB then continue
         if (bike != null ) {
-        	RentBikeController rentbikecontroller = new RentBikeController();
         	rentbikecontroller.setBike(bike);
-        	
         	//change to payment screen
     	    Stage stage;
     	    Parent root;
@@ -50,7 +55,7 @@ public class RentBikeScreenController {
     	    stage.setTitle("Payment");
     	    stage.show();
         }
-        else Popup.display("Error", "Invalid Bike ID");;
+        else Popup.display("Error", "Invalid Bike ID");
         
 	}
 	/** 

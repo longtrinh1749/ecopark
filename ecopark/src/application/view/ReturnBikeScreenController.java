@@ -27,6 +27,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import application.controller.ReturnBikeController;
 import application.model.entity.*;
+import application.model.services.DockService;
+import application.model.services.DockServiceInterface;
 /**
  * This class control the return bike screen
  * @author tungnt
@@ -40,17 +42,20 @@ public class ReturnBikeScreenController{
 	@FXML
 	private ScrollPane scrollWrap;
 	private ReturnBikeController controller;
+	private DockServiceInterface dockService;
 	
 	public ReturnBikeScreenController() {
 	    this.controller = new ReturnBikeController();
+	    dockService = new DockService();
 	  }
+	
 	/**
 	 * This function is used to initialize the available dock list for return bike
 	 * @throws IOException
 	 */
 	  @FXML
 	  public void initialize() throws IOException {
-	    displayListDocks(controller.getAvailableDockForReturnBike());
+	    displayListDocks(dockService.getAvailableDockForReturnBike());
 	  }
 	  /**
 	   * This function is used to display the dock list for return bike
@@ -82,7 +87,7 @@ public class ReturnBikeScreenController{
 	      Text noOfSlot = new Text();
 	      noOfSlot.setFont(new Font(20));
 	      int tmpDockId = listDocks.get(i - 1).getId();
-	      noOfSlot.setText(Integer.toString(controller.getNumberOfSlot(tmpDockId)));
+	      noOfSlot.setText(Integer.toString(dockService.getEmptyParkingLot(tmpDockId)));
 	      GridPane.setConstraints(noOfSlot, 2, i);
 	      GridPane.setHalignment(noOfSlot, HPos.CENTER);
 	      
@@ -94,7 +99,7 @@ public class ReturnBikeScreenController{
 	      GridPane.setHalignment(returnBikeBtn, HPos.CENTER);
 	      returnBikeBtn.setOnAction(actionEvent -> {
 	    	 controller.returnBike(tmpDockId);
-	    	 if (controller.getTransactionResult() == "Successful Payment" ) { 
+	    	 if (controller.getPaymentTransaction().getTransactionResult() == "Successful Payment" ) { 
 	    	// move to invoice screen
 	    		 try {
 	    			 Stage stage;
@@ -108,7 +113,7 @@ public class ReturnBikeScreenController{
 	    		 } catch (IOException e) {
 	    			 // TODO Auto-generated catch block
 	    			 e.printStackTrace();
-	    		 }} else Popup.display("Error",controller.getTransactionMessage());
+	    		 }} else Popup.display("Error",controller.getPaymentTransaction().getTransactionMessage());
 	      });
 	      
 	      dockListDisplay.getChildren().addAll(dockId, dockAddr, noOfSlot, returnBikeBtn);

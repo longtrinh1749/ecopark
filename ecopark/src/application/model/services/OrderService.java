@@ -4,7 +4,7 @@ import application.model.dao.OrderDAO;
 import application.model.dao.impl.OrderDAOImpl;
 import application.model.entity.Order;
 
-public class OrderService {
+public class OrderService implements OrderServiceInterface{
 	private OrderDAO orderDAO;
 	
 	public OrderService() {
